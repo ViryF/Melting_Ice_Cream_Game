@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: lavender;
+}
+h1 {
+  text-align: center;
+}
+.errors {
+  text-align:end;
+}
+.keyWord {
+  text-align: center
+}
+#alphabetLetters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  }
+.letter { 
+  margin: 5px;
+  padding: 10px
+}
