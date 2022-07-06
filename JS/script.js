@@ -33,8 +33,49 @@ keyWord.innerHTML = wordStatus;
 
 // FUNCTIONS
 
+const spaceCount = () => {
+  for (let i = 0; i < chosenWord.length; i++) {
+    let myDiv = document.createElement('div');
+    wordToGuess.appendChild(myDiv);
+    let mySpan = document.createElement('span');
+    let myDiv1 = document.createElement('div');
+    mySpan.innerHTML = chosenWord.at(i);
+    myDiv1.innerHTML = '_';
+    myDiv.appendChild(mySpan);
+    myDiv.appendChild(myDiv1);
+    myDiv.setAttribute('class', 'container');
+    mySpan.classList.add('hidden');
+    myDiv1.setAttribute('class', 'underline');
+  }
+};
+
 const generateRandomWord = () => {
   chosenWord = food[Math.floor(Math.random() * food.length)];
+};
+
+generateRandomWord();
+console.log(chosenWord);
+spaceCount();
+
+const makeGuess = (evt) => {
+  let currentGuess = evt.currentTarget.innerText.toLowerCase();
+  if (chosenWord.includes(currentGuess)) {
+    let spanTags = document.querySelectorAll('.hidden');
+    spanTags.forEach((element) => {
+      if (element.innerText === currentGuess) {
+        element.classList.remove('hidden');
+      }
+    });
+  } else {
+    updateMistakeCount();
+    disappearIceCream();
+  }
+  console.log(chosenWord.includes(currentGuess));
+};
+
+const updateMistakeCount = () => {
+  mistakes++;
+  errors.innerText = mistakes;
 };
 
 // EVENT LISTENERS
