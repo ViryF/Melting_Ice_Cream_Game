@@ -1,12 +1,9 @@
 // Global Variables
 // GETTERS
-const letterButtons = document.querySelector('.leter');
-const errors = document.getElementById('mistakes');
-const maxErrors = document.getElementById('maxMistakes');
-const prompt = document.querySelector('prompt');
-const wordToGuess = document.querySelector('keyWord');
-const alphabet = document.getElementById('alphabetLetters');
-const playAgain = document.querySelector('playAgain');
+const prompt = document.querySelector('.prompt');
+const wordToGuess = document.querySelector('.keyWord');
+const playAgain = document.querySelector('.playAgain');
+let alphabetList = document.querySelectorAll('.letters');
 
 // VARIABLES
 
