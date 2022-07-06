@@ -17,9 +17,19 @@ const food = [
   'ramen',
   'rice'
 ];
+
+let answer = '';
 let mistakes = 0;
 let maxMistakes = 6;
-let currentGuesses = [];
+let currentGuess = [];
+let wordStatus = null;
+
+const errors = document.getElementById('mistakes');
+errors.innerHTML = mistakes;
+const maxErrors = document.getElementById('maxMistakes');
+maxErrors.innerHTML = maxMistakes;
+const keyWord = document.querySelector('.keyWord');
+keyWord.innerHTML = wordStatus;
 
 // FUNCTIONS
 
