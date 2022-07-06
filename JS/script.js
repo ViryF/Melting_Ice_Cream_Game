@@ -79,3 +79,11 @@ const updateMistakeCount = () => {
 };
 
 // EVENT LISTENERS
+
+alphabetList.forEach((element) => {
+  element.addEventListener(
+    'click',
+    (evt) => makeGuess(evt, chosenWord.innerText),
+    { once: true }
+  );
+});
