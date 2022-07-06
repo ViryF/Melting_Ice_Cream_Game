@@ -6,19 +6,44 @@
 }
 h1 {
   text-align: center;
+  font-size: 110px;
+
 }
+
 .errors {
   text-align:end;
+  font-size: 45px;
+
 }
 .keyWord {
-  text-align: center
-}
-#alphabetLetters {
+  text-align: center;
+  font-size: 45px;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  }
-.letter { 
-  margin: 5px;
-  padding: 10px
+}
+.prompt {
+  font-size: 45px;
+}
+
+.letters {
+  display: inline-flex;
+  font-size: 400%;
+  cursor: pointer;
+}
+
+
+button {
+  font-size: 150%;
+}
+
+.container {
+  justify-content: left;
+}
+
+.hidden {
+  color: rgba(0, 0, 0, 0)
+}
+
+
+.underline { 
+  margin-top: -50px;
 }
