@@ -7,19 +7,19 @@
 h1 {
   text-align: center;
   font-size: 110px;
-
 }
 
 .errors {
   text-align:end;
   font-size: 45px;
-
 }
+
 .keyWord {
   text-align: center;
   font-size: 45px;
   display: flex;
 }
+
 .prompt {
   font-size: 45px;
 }
@@ -29,7 +29,6 @@ h1 {
   font-size: 400%;
   cursor: pointer;
 }
-
 
 button {
   font-size: 150%;
