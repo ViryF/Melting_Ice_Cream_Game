@@ -63,6 +63,15 @@ const checkWin = () => {
   }
 };
 
+const gameOver = () => {
+  if (mistakes === 6) {
+    // alphabetList.classList.add('hidden')
+    document.querySelector(
+      '.keyWord'
+    ).innerHTML = `You Lost!! The answer was ${chosenWord}`;
+  }
+};
+
 const makeGuess = (evt) => {
   let currentGuess = evt.currentTarget.innerText.toLowerCase();
   if (chosenWord.includes(currentGuess)) {
