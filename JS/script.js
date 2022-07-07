@@ -1,12 +1,19 @@
 // Global Variables
 // GETTERS
 const prompt = document.querySelector('.prompt');
-const wordToGuess = document.querySelector('.keyWord');
-const playAgain = document.querySelector('.playAgain');
-let alphabetList = document.querySelectorAll('.letters');
+const playAgainButton = document.querySelector('.playAgain');
+const alphabetLetters = document.querySelector('#alphabetletters');
 
 // VARIABLES
-
+const imgSrcArray = [
+  'images/0.png',
+  'images/1.png',
+  'images/2.png',
+  'images/3.png',
+  'images/4.png',
+  'images/5.png',
+  'images/6.png'
+];
 const food = [
   'taco',
   'sushi',
@@ -14,15 +21,43 @@ const food = [
   'pizza',
   'burrito',
   'quesadilla',
-  'ramen',
+  'soup',
   'rice'
 ];
 
-let answer = '';
+let chosenWord = '';
 let mistakes = 0;
 let maxMistakes = 6;
 let currentGuess = [];
 let wordStatus = null;
+const alphabet = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
+];
 
 const errors = document.getElementById('mistakes');
 errors.innerHTML = mistakes;
@@ -30,13 +65,14 @@ const maxErrors = document.getElementById('maxMistakes');
 maxErrors.innerHTML = maxMistakes;
 const keyWord = document.querySelector('.keyWord');
 keyWord.innerHTML = wordStatus;
+const pic = document.querySelector('#iceCreamPic');
 
 // FUNCTIONS
 
 const spaceCount = () => {
   for (let i = 0; i < chosenWord.length; i++) {
     let myDiv = document.createElement('div');
-    wordToGuess.appendChild(myDiv);
+    keyWord.appendChild(myDiv);
     let mySpan = document.createElement('span');
     let myDiv1 = document.createElement('div');
     mySpan.innerHTML = chosenWord.at(i);
@@ -54,18 +90,32 @@ const generateRandomWord = () => {
 };
 
 generateRandomWord();
-console.log(chosenWord);
 spaceCount();
+
+const createAlphabet = () => {
+  alphabetLetters.innerHTML = '';
+  alphabet.forEach((letter) => {
+    let div = document.createElement('div');
+    div.classList.add('letters');
+    div.innerText = letter;
+    div.addEventListener('click', (evt) => makeGuess(evt), { once: true });
+    alphabetLetters.appendChild(div);
+  });
+};
+createAlphabet();
+
+let alphabetList = document.querySelectorAll('.letters');
 
 const checkWin = () => {
   if (wordStatus === chosenWord.length) {
+    alphabetLetters.innerHTML = '';
     document.querySelector('.keyWord').innerHTML = 'Congratulations! You Won!!';
   }
 };
 
 const gameOver = () => {
   if (mistakes === 6) {
-    // alphabetList.classList.add('hidden')
+    alphabetLetters.innerHTML = '';
     document.querySelector(
       '.keyWord'
     ).innerHTML = `You Lost!! The answer was ${chosenWord}`;
@@ -76,36 +126,43 @@ const updateMistakeCount = () => {
   if (mistakes < maxMistakes) {
     mistakes++;
     errors.innerText = mistakes;
+    pic.setAttribute('src', imgSrcArray[mistakes]);
   } else {
     gameOver();
   }
 };
 
 const makeGuess = (evt) => {
-  let currentGuess = evt.currentTarget.innerText.toLowerCase();
+  let currentGuess = evt.target.innerText.toLowerCase();
   if (chosenWord.includes(currentGuess)) {
     let spanTags = document.querySelectorAll('.hidden');
     spanTags.forEach((element) => {
       if (element.innerText === currentGuess) {
+        wordStatus++;
         element.classList.remove('hidden');
+        evt.currentTarget.classList.add('hidden');
         checkWin();
       }
     });
   } else {
     evt.currentTarget.classList.add('hidden');
     updateMistakeCount();
-    // disappearIceCream()
     gameOver();
   }
-  console.log(chosenWord.includes(currentGuess));
+};
+
+const resetGame = () => {
+  createAlphabet();
+  mistakes = 0;
+  errors.innerText = mistakes;
+  currentGuess = [];
+  wordStatus = null;
+  keyWord.innerHTML = '';
+  pic.setAttribute('src', imgSrcArray[0]);
+  generateRandomWord();
+  spaceCount();
 };
 
 // EVENT LISTENERS
 
-alphabetList.forEach((element) => {
-  element.addEventListener(
-    'click',
-    (evt) => makeGuess(evt, chosenWord.innerText),
-    { once: true }
-  );
-});
+playAgainButton.addEventListener('click', resetGame);
