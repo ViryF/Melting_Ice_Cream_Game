@@ -72,6 +72,14 @@ const gameOver = () => {
   }
 };
 
+const updateMistakeCount = () => {
+  if (mistakes < maxMistakes) {
+  mistakes++
+  errors.innerText = mistakes
+} else {
+  gameOver()
+}
+
 const makeGuess = (evt) => {
   let currentGuess = evt.currentTarget.innerText.toLowerCase();
   if (chosenWord.includes(currentGuess)) {
