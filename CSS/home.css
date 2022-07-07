@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'playfair Display', serif;
+  background-color: navajowhite;
+}
+
+button {
+  font-size: 150%;
+}
