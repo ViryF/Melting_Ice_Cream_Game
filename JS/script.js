@@ -74,11 +74,12 @@ const gameOver = () => {
 
 const updateMistakeCount = () => {
   if (mistakes < maxMistakes) {
-  mistakes++
-  errors.innerText = mistakes
-} else {
-  gameOver()
-}
+    mistakes++;
+    errors.innerText = mistakes;
+  } else {
+    gameOver();
+  }
+};
 
 const makeGuess = (evt) => {
   let currentGuess = evt.currentTarget.innerText.toLowerCase();
@@ -87,11 +88,14 @@ const makeGuess = (evt) => {
     spanTags.forEach((element) => {
       if (element.innerText === currentGuess) {
         element.classList.remove('hidden');
+        checkWin();
       }
     });
   } else {
+    evt.currentTarget.classList.add('hidden');
     updateMistakeCount();
-    disappearIceCream();
+    // disappearIceCream()
+    gameOver();
   }
   console.log(chosenWord.includes(currentGuess));
 };
