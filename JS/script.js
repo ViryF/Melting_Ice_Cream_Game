@@ -57,6 +57,12 @@ generateRandomWord();
 console.log(chosenWord);
 spaceCount();
 
+const checkWin = () => {
+  if (wordStatus === chosenWord.length) {
+    document.querySelector('.keyWord').innerHTML = 'Congratulations! You Won!!';
+  }
+};
+
 const makeGuess = (evt) => {
   let currentGuess = evt.currentTarget.innerText.toLowerCase();
   if (chosenWord.includes(currentGuess)) {
@@ -71,11 +77,6 @@ const makeGuess = (evt) => {
     disappearIceCream();
   }
   console.log(chosenWord.includes(currentGuess));
-};
-
-const updateMistakeCount = () => {
-  mistakes++;
-  errors.innerText = mistakes;
 };
 
 // EVENT LISTENERS
