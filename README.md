@@ -1,7 +1,7 @@
 # Melting Ice Cream!
 # Date: 07/02/2022
 ## By: Viridiana Flores
-## [GitHub](https://github.com/ViryF) | [LinkedIn](htps://www.linkedin.com/in/viridianaflores)
+## [GitHub](https://github.com/ViryF) | [LinkedIn](https://www.linkedin.com/in/viridianaflores)
 ***
 ## ***Description***
 ## This is a game called Melting Ice Cream. The objective of the game is to correctly guess the specific word provided ramdomly before the Ice Cream melts. The player will need to guess each letter of the word from a list of letters available. Each letter can only be picked once and if the letter makes a part of the random word, then it will be added to its corresponding spot(s). If the letter is not a part of the word, then it will be counted as a mistake, and an element will be removed from the drawing. The player can keep guessing different letters from the stock until they guess the correct word, or the drawing has disappeared, whichever comes first. However, there is a limit of 6 mistakes. Once the limit is reached, the drawing disappears and the game is lost. 
