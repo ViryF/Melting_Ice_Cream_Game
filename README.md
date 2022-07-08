@@ -17,12 +17,13 @@
 ***
 ## ***Screenshots*** 
 ### **Welcome Page**
-![Image](https://files.slack.com/files-pri/T0351JZQ0-F03NU0A9CF5/image.png)
+![Image](https://discord.com/75fafc3e-4d06-442d-81cf-32bbc4c67b9d)
 ### **Game Page**
 ![Image](https://files.slack.com/files-pri/T0351JZQ0-F03NU29LTAN/image.png)
 ***
 ## ***Future Updates***
 - [] Will have multiple topics to choose from. They could vary from food, countries, music style, and others.
+- [] Add a dark mode feature
 ***
 ## ***Credits***
 ### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide) 
