@@ -17,9 +17,9 @@
 ***
 ## ***Screenshots*** 
 ### **Welcome Page**
-![Image](https://discord.com/75fafc3e-4d06-442d-81cf-32bbc4c67b9d)
+![Image](https://media.discordapp.net/attachments/994993050885570580/994993196251746304/unknown.png?width=922&height=587)
 ### **Game Page**
-![Image](https://files.slack.com/files-pri/T0351JZQ0-F03NU29LTAN/image.png)
+![Image](https://media.discordapp.net/attachments/994993050885570580/994993319694315580/unknown.png?width=810&height=856)
 ***
 ## ***Future Updates***
 - [] Will have multiple topics to choose from. They could vary from food, countries, music style, and others.
