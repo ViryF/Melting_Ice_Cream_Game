@@ -1,34 +1,48 @@
 * {
-  padding: 0;
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background-color: lavender;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://th.bing.com/th/id/OIP.0U2aCsseIuq_UQd6NxMprQHaEK?w=325&h=183&c=7&r=0&o=5&pid=1.7);
+  background-size: cover;
+}
+
 h1 {
   text-align: center;
   font-size: 110px;
 }
-
+.mainPrompt {
+  font-size: 45px;
+  justify-content: center;
+}
+.images {
+  display: flex;
+  justify-content: center;
+}
+#alphabetletters {
+  display: flex;
+  justify-content: space-between;
+  margin: 5vw;
+}
 .errors {
   text-align:end;
   font-size: 45px;
-}
 
+}
 .keyWord {
   text-align: center;
   font-size: 45px;
   display: flex;
 }
 
-.prompt {
-  font-size: 45px;
-}
-
 .letters {
   display: inline-flex;
-  font-size: 400%;
+  font-size: 300%;
   cursor: pointer;
 }
+
 
 button {
   font-size: 150%;
@@ -45,4 +59,9 @@ button {
 
 .underline { 
   margin-top: -50px;
+}
+
+#playAgain {
+  display: flex;
+  position: center;
 }
